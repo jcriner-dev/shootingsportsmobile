@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title> CHANGELOG.md </title>
+
+    <link rel="stylesheet" href="../theme/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../theme/css/font-awesome.css" type="text/css"/>
+  </head>
+  <body>
+    <div class=container>
+      <div class=header>
+          <a href="../index.html">Shooting Sports Mobile</a>
+      </div>
+      <div class=navigation>
+        <ul>
+            <li><a href="../blog.html">blog</a> </li>
+            <li><a href="../archives.html">archive</a> </li>
+            <li><a href="../tags.html">tags</a> </li>
+            <li><a href="../index.html">about</a> </li>
+            <li><a href="../pages/store.html">store</a> </li>
+        </ul>
+      </div>
+      <div class=separator></div>        
+        <div class=body>
+    <div class='page'>
+        <h1> CHANGELOG.md </h1>
+        <p>Copyright (c) 2013-2017 James Criner<br />
+All notable changes to this project will be documented in this file.</p>
+<h2>[0.5.1] - 2017-02-11</h2>
+<h3>Added</h3>
+<ul>
+<li>Added "down_value" to server config (defaults to 1.0 2017 rules). Score is calculated as PD * down_value.</li>
+<li>Added option to get results as a webpage or PDF download.</li>
+<li>Added "best of" feature to season standings to allow throwouts.</li>
+<li>Added "XXX" = "Anything Goes" division as a catchall.</li>
+<li>Added import and editor for arbitrary unofficial divisions (think SPD, PCC, BBQ, ETC).</li>
+<li>Added BUG-R, BUG-S to make_model.csv to allow for subdivisions via makes.<ul>
+<li>Use the make/model/caliber feature at signup to identify subdivisions.</li>
+<li>Results are still grouped by division, but you can use this method to identify subdivisions. </li>
+</ul>
+</li>
+<li>Added First Responder (FP) category. We have been using it for years locally and figured others may want to as well.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Changed scoring formula for Points Down from PD * 0.5 to PD * 1.0 (2017 Rules).</li>
+<li>Changed scoring formula and scoring program to add Flagrant Penalty FP * 10.0 (2017 Rules).</li>
+<li>Changed scoring formula and scoring program to remove Failure To Neutralize FTN * 5.0 (2017 Rules).</li>
+<li>Changed number of strings and rounds for classifier from 7, 4, 3 (90) to 3, 3, 2 (72) (2017 Rules).</li>
+<li>Changed classification times for new classifier (2017 Rules).</li>
+</ul>
+<h3>Removed</h3>
+<ul>
+<li>Remove timezone specification.</li>
+<li>Removed Not For Competition (NFC) Division.</li>
+<li>Removed FTN button from scoring app (2017 Rules).</li>
+</ul>
+<h3>Other</h3>
+<ul>
+<li>There are a number of breaking changes in this version.</li>
+<li>You can still generate reports from existing matches and classifiers, but any attempt to change (admin/stage edit) and / or re-upload (scoring/upload) existing scores will lead to problems. If you need to do that, you should be using the versions that generated the scores in the first place.</li>
+<li>Category differences from 2017 Rulebook:<ul>
+<li>M6 Competitors may choose ONE of the following to add to their registration...<ul>
+<li>This change is probably to prevent a single shooter from being acknowledged in multiple categories.</li>
+<li>The software currently associates "categories" with shooters, not with entries, because categories do not tend to change match to match.</li>
+<li>If you believe that someone who served their fellow citizens (Military, Law Enforcement, First Responder) and their fellow shooters (Safety Officer) deserves to be recognized as both, continue to check as many categories as are appropriate for each shooter.</li>
+<li>WORKAROUND: If you want to strictly comply with the 2017 rules, simply make sure that each shooter has only one category checked at any given time. The score reports will reflect the category checked at the time the report is generated.</li>
+</ul>
+</li>
+<li>M6.8 Military &amp; M6.9 Law Enforcement are now "active" only. This change is probably to force consistency with the one category change above.<ul>
+<li>We strongly believe that anyone who took an oath to serve their fellow citizens deserves to be recognized no matter how long they we able to serve. As such, our default category descriptions for Military, Law Enforcement, and First Responder will always reflect that. If a Veteran can outshoot an Active Member, then we would like to recognize them.</li>
+<li>WORKAROUND: If you want to strictly comply with the 2017 rules and have your category descriptions consistent with the rulebook there are two options:<ol>
+<li>Edit your categories.csv file before you start the program for the first time and create your database.</li>
+<li>Contact us and we will give you simple and straightforward instructions on how to edit the category descriptions in your existing database. It isn't hard and we are happy to help.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>[0.4.6] - 2016-10-24</h2>
+<h3>Changed</h3>
+<ul>
+<li>"Classified" for season standings now means that the shooter complies with the IDPA rules on classification frequency as of the season end date.</li>
+<li>Scoring<ul>
+<li>Bumped phonegap-version from 3.6.3 to cli-5.4.1<ul>
+<li>Changed config.xml and index.html to work with new style plugins (device, splashscreen, statusbar)</li>
+<li>Minimum Android version = 4.0</li>
+<li>Minimum iOS version 6.0 (last version to support iPhone 3GS)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Updated copyright, license, and documentation.</li>
+<li>Changed titles on results reports.</li>
+</ul>
+<h2>[0.4.5] - 2016-04-08</h2>
+<h3>Changed</h3>
+<ul>
+<li>Signup now prefills shooter classifications instead of previous entries. This was done because incorrect entries were being propagated for some people.</li>
+<li>Signup and Scoring / Squad / Add from Device now are "aware" of shooter classifications. Any division change will change the class to the "known" class. You can override class if it is incorrect.</li>
+</ul>
+<h3>Other</h3>
+<ul>
+<li>The changes above were implemented because certain shooters were repeatedly entering matches in incorrect divisions / classes.</li>
+</ul>
+<h2>[0.4.4] - 2015-07-15</h2>
+<h3>Changed</h3>
+<ul>
+<li>Updated signup messages.</li>
+<li>Updated font size for larger devices.</li>
+</ul>
+<h2>[0.4.0] - 2015-01-01</h2>
+<h3>Added</h3>
+<ul>
+<li>Added match performance promotion feature.</li>
+<li>Added custom shooter properties (Shirt, Lunch, etc).</li>
+<li>Added match report by stage.</li>
+<li>Added capability to change "Shooter Agree?" message in scoring app.</li>
+<li>Added random alias to new shooters created in scoring app.</li>
+<li>Added option to prevent updating existing shooters when importing.</li>
+<li>Added license management via web interface.</li>
+<li>Added REV &amp; CCP divisions (2015 Rules).</li>
+<li>Added classification in BUG division (2015 Rules).</li>
+<li>Added embedded device support.<ul>
+<li>Device becomes a wifi hotspot on boot.</li>
+<li>Accessible over wifi.<ul>
+<li>via fixed ip address.</li>
+<li>via name if clients support Zeroconf networking.<ul>
+<li>iOS, Linux, Mac out of the box.</li>
+<li>Windows requires Apple Bonjour installed.</li>
+<li>Android 4.1 does not work.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Accessible over ethernet.<ul>
+<li>via dhcp ip address.</li>
+<li>via name if clients support Zeroconf networking.<ul>
+<li>iOS, Linux, Mac out of the box.</li>
+<li>Windows requires Apple Bonjour installed.</li>
+<li>Android 4.1 does not work.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>IDPA functions work when ethernet is plugged in to internet router.</li>
+<li>Software build system for embedded devices.</li>
+<li>Run ssmi_server on boot.</li>
+<li>Cron job keeps ssmi_server running if process dies unexpectedly.</li>
+<li>Added feature detection for embedded device and real time clock.</li>
+<li>Added automatic clock syncing to client on login.</li>
+<li>Added software reboot / shutdown feature.<ul>
+<li>Required to safely reboot / shutdown embedded devices without a power off button.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Changed authorization functions to allow license management.</li>
+<li>Changed software update function.</li>
+<li>Changed import / export / IDPA functions to handle division changes.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed login cookie bugs.</li>
+</ul>
+<h3>Deprecated</h3>
+<ul>
+<li>Disabled further classifications in ESR &amp; SSR divisions (2015 Rules).</li>
+</ul>
+<h3>Security</h3>
+<ul>
+<li>Require login credentials for downloading IDPA status file.</li>
+</ul>
+<h2>[0.3.0] - 2013-01-01</h2>
+<h3>Other</h3>
+<ul>
+<li>Used for 2013 &amp; 2104.</li>
+</ul>
+<h2>Unreleased</h2>
+<h3>Added</h3>
+<h3>Changed</h3>
+<h3>Fixed</h3>
+<h3>Deprecated</h3>
+<h3>Removed</h3>
+<h3>Security</h3>
+<h3>Other</h3>
+    </div>
+        </div>
+        
+<div class=footer>
+  <p>Copyright &copy; 2013-2017 James Criner</p>
+  <p> Powered by <a href="http://python.org" target="_blank">Python</a>, <a href="http://pypi.python.org/pypi/pelican/" target="_blank">Pelican</a>, and <a href="http://jinja.pocoo.org" target="_blank">Jinja2</a>.
+  </p> 
+  <div class=social style="font-size: 27px;">
+    <ul>
+      <li><a href="mailto:support@shootingsportsmobile.com" target="_blank"> <i class="icon-envelope icon-large"></i> </a></li>
+<!--
+    <li><a href="../feeds/all.atom.xml" rel="alternate" title="Recent Blog Posts">_<i class="icon-rss icon-large"></i>_</a></li>
+-->
+    </ul>
+  </div>
+</div>    </div>
+  </body>
+</html>
