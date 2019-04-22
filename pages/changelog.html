@@ -29,7 +29,67 @@
         <h1> CHANGELOG </h1>
         <p>Copyright (c) 2013-2019 James Criner<br />
 All notable changes to this project will be documented in this file.</p>
-<h2>[0.5.8] - 2019-03</h2>
+<h2>[2019.1.3] - 2019-04-22</h2>
+<h3>Added</h3>
+<ul>
+<li>Added --version flag.</li>
+<li>Added better name parsing for IDPAHQ status files.</li>
+<li>Added method to convert IDPAHQJSON2019 to IDPAHQCSV2019 (cli only).</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Changed all html, js, and styl code formatting to prettier.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed bug in admin classifier stage edit when finding method in sql.</li>
+<li>Fixed bug in admin user edit when deleting user.</li>
+<li>Fixed db/divisions.csv to only include XXX since PCC is now official.</li>
+</ul>
+<h2>[2019.1.2] - 2019-04-17</h2>
+<h3>Changed</h3>
+<ul>
+<li>Changed all python code formatting to black.</li>
+<li>Changed db/sql/classifier_from_match.sql to export format consistent with admin classifier export function.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed IDPA classifier exports to have correct fields and values for upload to idpa.com.</li>
+<li>Fixed handling of classification dates when importing IDPA member status files.</li>
+</ul>
+<h2>[2019.1.1] - 2019-04-05</h2>
+<h3>Changed</h3>
+<ul>
+<li>Changed from "semver.org" to "calver.org" versioning.<ul>
+<li>Rationale<ul>
+<li>Project should have been past version 1.0 over five years ago.</li>
+<li>Project did not follow strict semver regarding breaking changes.</li>
+<li>Rules tend to be season oriented.</li>
+</ul>
+</li>
+<li>Format<ul>
+<li>YYYY.version.patch</li>
+<li>YYYY = four (4) digit year.</li>
+<li>version = incremental integer version for the year.<ul>
+<li>Used for feature changes or improvements.</li>
+<li>MAY or MAY NOT be backward compatible with the same YYYY.</li>
+</ul>
+</li>
+<li>patch = incremental integer bugfix.<ul>
+<li>Used for bugfixes only.</li>
+<li>MUST be backwards compatible with the same YYYY.version.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed filename bug in idpahq.py when using --diff-status on the command line.</li>
+</ul>
+<h2>[0.5.8] - 2019-03-04</h2>
 <h3>Added</h3>
 <ul>
 <li>Added match export for upload to new IDPA website.</li>
